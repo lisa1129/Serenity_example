@@ -24,13 +24,13 @@
         android:layout_marginLeft="20dp"
         android:background="@drawable/airplane" />
 
-    <ImageButton
-        android:id="@+id/pencil"
-        android:layout_width="27dp"
-        android:layout_height="31dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/pencil" />
+    <!--<ImageButton-->
+        <!--android:id="@+id/pencil"-->
+        <!--android:layout_width="27dp"-->
+        <!--android:layout_height="31dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:background="@drawable/pencil" />-->
 
 </RelativeLayout>

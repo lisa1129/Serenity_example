@@ -21,53 +21,82 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.9"
+            android:layout_weight="0.10"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/mp_bgimg"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:foregroundGravity="top"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mp_bgimg_1" />
+
+                <ImageView
+                    android:id="@+id/profile_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:foregroundGravity="bottom"
+                    app:srcCompat="@drawable/mylove" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.90"
             android:layout_gravity="bottom"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/homeButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#bdbdbd"
+                android:background="#000000"
                 android:onClick="homeButtonOnClicked"
-                android:visibility="visible"
-                app:srcCompat="@drawable/home" />
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_home" />
 
             <ImageButton
                 android:id="@+id/mypageButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#00ff0000"
+                android:background="#000000"
                 android:onClick="mypageButtonOnClicked"
-                android:visibility="visible"
-                app:srcCompat="@drawable/magni" />
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_person" />
 
             <ImageButton
-                android:id="@+id/nextButton"
+                android:id="@+id/settingButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#00ff0000"
-                android:onClick="backButtonOnClicked"
-                android:visibility="visible"
-                app:srcCompat="@drawable/arrow" />
-
+                android:background="#000000"
+                android:padding="0dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_settings" />
         </LinearLayout>
 
     </LinearLayout>

@@ -16,16 +16,6 @@ public class MypageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mypage);
     }
 
-    public void homeButtonOnClicked (View v){
-        finish();
-        overridePendingTransition(0,0);
-    }
-
-    public void mypageButtonOnClicked (View v){
-        finish();
-        overridePendingTransition(0,0);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();

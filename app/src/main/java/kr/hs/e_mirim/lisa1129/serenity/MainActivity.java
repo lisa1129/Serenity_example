@@ -34,34 +34,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void homeButtonOnClicked(View v){
-        Toast.makeText(this, "돌아갈 길은 없다",Toast.LENGTH_SHORT).show();
-    }
-
-    @Override public boolean onCreateOptionsMenu(Menu menu) { // inflater함수를 이용해서 menu 리소스를 menu로 변환.
-        // 두 줄 코드
-         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        // 한 줄 코드
-         getMenuInflater().inflate(R.menu.menu, menu);
-        return super.onCreateOptionsMenu(menu); }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // TODO Auto-generated method stub
-        switch (item.getItemId()) {
-            case R.id.airplane:
-                // airplane 이 눌렸을 경우 이벤트 발생
-                Intent intent = new Intent(getApplicationContext(),ChatActivity.class);
-                startActivity(intent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        Toast.makeText(this, "이미 메인 화면 입니다.",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
+
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
 
         // Custom Actionbar를 사용하기 위해 CustomEnabled을 true 시키고 필요 없는 것은 false 시킨다
         actionBar.setDisplayShowCustomEnabled(true);
@@ -71,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View actionbar = inflater.inflate(R.layout.custom_bar, null);
+        LayoutInflater inflater1 = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
+        View actionbar = inflater1.inflate(R.layout.custom_bar, null);
 
         actionBar.setCustomView(actionbar);
 
@@ -83,4 +65,17 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.airplane:
+                Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
+                startActivity(intent);
+                return true;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
