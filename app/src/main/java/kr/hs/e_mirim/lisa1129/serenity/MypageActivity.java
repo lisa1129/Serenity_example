@@ -23,7 +23,6 @@ public class MypageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
-                overridePendingTransition(0,0);
             }
         });
 
@@ -33,7 +32,6 @@ public class MypageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
-                overridePendingTransition(0,0);
             }
         });
     }

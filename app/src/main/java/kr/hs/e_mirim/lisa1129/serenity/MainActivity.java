@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 //    int idx1 = 0;
@@ -26,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MypageActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
-                overridePendingTransition(0,0);
             }
         });
 
+    }
+
+    public void homeButtonOnClicked(View v){
+        Toast.makeText(this, "이미 메인화면입니다.", Toast.LENGTH_SHORT).show();
     }
 
     @Override
