@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 //    int idx1 = 0;
 
     @Override
@@ -28,19 +28,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton setting = (ImageButton)findViewById(R.id.settingButton);
-        setting.setOnClickListener(new View.OnClickListener(){
+        ImageButton home = (ImageButton)findViewById(R.id.homeButton);
+        home.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SettingActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
         });
 
     }
 
-    public void homeButtonOnClicked(View v){
-        Toast.makeText(this, "이미 메인화면입니다.", Toast.LENGTH_SHORT).show();
+    public void settingOnClicked(View v){
+        Toast.makeText(this, "이미 설정화면입니다.", Toast.LENGTH_SHORT).show();
     }
 
     @Override

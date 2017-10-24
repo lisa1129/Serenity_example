@@ -34,6 +34,16 @@ public class MypageActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        ImageButton setting = (ImageButton)findViewById(R.id.settingButton);
+        setting.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),SettingActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
