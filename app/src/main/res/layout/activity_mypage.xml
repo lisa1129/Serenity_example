@@ -48,6 +48,16 @@
                     android:foregroundGravity="bottom"
                     app:srcCompat="@drawable/mylove" />
 
+                <ImageButton
+                    android:id="@+id/profile_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:layout_marginLeft="50dp"
+                    android:background="#00ff0000"
+                    android:onClick="profileEditOnClicked"
+                    app:srcCompat="@drawable/editpencil" />
+
 
             </FrameLayout>
 

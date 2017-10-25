@@ -71,6 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#000000"
+                android:onClick="settingOnClicked"
                 android:padding="0dp"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/icon_settings" />
