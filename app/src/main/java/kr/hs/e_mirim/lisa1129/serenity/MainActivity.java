@@ -1,7 +1,12 @@
 package kr.hs.e_mirim.lisa1129.serenity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -12,12 +17,24 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-//    int idx1 = 0;
+
+    MyApplication myApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        myApplication = (MyApplication)getApplicationContext();
+
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)==getPackageManager().PERMISSION_GRANTED){
+            myApplication.readStoragePermission =true;
+        }
+
+        if(!myApplication.readStoragePermission){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 20);
+        }
+
         //커스텀 액션바 만들기
         ImageButton mypage = (ImageButton)findViewById(R.id.mypageButton);
         mypage.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +58,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void homeButtonOnClicked(View v){
         Toast.makeText(this, "이미 메인화면입니다.", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[]permissions, @NonNull int[] grantResults){
+        super.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        if(requestCode == 20 && grantResults.length > 0){
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                myApplication.readStoragePermission = true;
+            }
+        }
     }
 
     @Override
