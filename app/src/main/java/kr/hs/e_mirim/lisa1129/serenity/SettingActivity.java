@@ -9,43 +9,40 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class MypageActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mypage);
-
-        ImageButton home = (ImageButton)findViewById(R.id.homeButton);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_setting);
 
         ImageButton mypage = (ImageButton)findViewById(R.id.mypageButton);
         mypage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
+                Intent intent = new Intent(getApplicationContext(),MypageActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
             }
         });
 
-
-        ImageButton setting = (ImageButton)findViewById(R.id.settingButton);
-        setting.setOnClickListener(new View.OnClickListener(){
+        ImageButton home = (ImageButton)findViewById(R.id.homeButton);
+        home.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),SettingActivity.class);
                 startActivity(intent);
             }
         });
+
     }
+
+    public void settingOnClicked(View v){
+        Toast.makeText(this, "이미 설정화면입니다.", Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
@@ -58,15 +55,24 @@ public class MypageActivity extends AppCompatActivity {
 
 
         //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View actionbar = inflater.inflate(R.layout.custom_bar, null);
+        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
+        LayoutInflater inflater1 = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View actionbar = inflater1.inflate(R.layout.custom_bar, null);
 
         actionBar.setCustomView(actionbar);
 
         //액션바 양쪽 공백 없애기
-        Toolbar parent = (Toolbar)actionbar.getParent();
-        parent.setContentInsetsAbsolute(0,0);
+        Toolbar parent = (Toolbar) actionbar.getParent();
+        parent.setContentInsetsAbsolute(0, 0);
 
         return true;
+    }
+
+
+    public void airplaneonClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class); // 다음 넘어갈 클래스 지정
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+
     }
 }

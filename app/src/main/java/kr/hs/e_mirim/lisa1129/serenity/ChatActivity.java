@@ -1,14 +1,11 @@
 package kr.hs.e_mirim.lisa1129.serenity;
 
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -51,26 +48,26 @@ public class ChatActivity extends AppCompatActivity {
 
         return true;
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+//        super.onActivityResult(requestCode,resultCode,data);
+//
+//        if(resultCode != RESULT_OK)
+//            return;
+//
+//        switch (requestCode){
+//            case PICK_FROM_GALLERY:{
+//                mImageCaptureUri = data.getData();
+//                Log.i("NR",mImageCaptureUri.getPath().toString()); break;
+//            }
+//        }
+//    }
 
-        if(resultCode != RESULT_OK)
-            return;
-
-        switch (requestCode){
-            case PICK_FROM_GALLERY:{
-                mImageCaptureUri = data.getData();
-                Log.i("NR",mImageCaptureUri.getPath().toString()); break;
-            }
-        }
-    }
-
-    private void getPhotoFromGallery(){
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-        startActivityForResult(intent,PICK_FROM_GARLLERY);
-    }
+//    private void getPhotoFromGallery(){
+//        Intent intent = new Intent(Intent.ACTION_PICK);
+//        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+//        startActivityForResult(intent,PICK_FROM_GARLLERY);
+//    }
 
     public void airplaneonClicked(View v) {
         Toast.makeText(this, "이미 글귀 화면 입니다.", Toast.LENGTH_SHORT).show();

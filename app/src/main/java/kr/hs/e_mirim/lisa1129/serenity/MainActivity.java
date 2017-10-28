@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         myApplication = (MyApplication)getApplicationContext();
 
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)==getPackageManager().PERMISSION_GRANTED){
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 20);
         }
 
-        //커스텀 액션바 만들기
         ImageButton mypage = (ImageButton)findViewById(R.id.mypageButton);
         mypage.setOnClickListener(new View.OnClickListener() {
             @Override
