@@ -35,9 +35,6 @@
             app:srcCompat="@drawable/crossout"
             tools:layout_editor_absoluteX="325dp"
             tools:layout_editor_absoluteY="16dp" />
-
-            
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
-

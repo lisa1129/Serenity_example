@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 
 public class MypageActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +23,7 @@ public class MypageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
+
             }
         });
 
@@ -33,19 +33,11 @@ public class MypageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class); // 다음 넘어갈 클래스 지정
                 startActivity(intent);
-            }
-        });
 
-
-        ImageButton setting = (ImageButton)findViewById(R.id.settingButton);
-        setting.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),SettingActivity.class);
-                startActivity(intent);
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
@@ -68,5 +60,11 @@ public class MypageActivity extends AppCompatActivity {
         parent.setContentInsetsAbsolute(0,0);
 
         return true;
+    }
+    public void airplaneonClicked(View v) {
+        Intent intent = new Intent(getApplicationContext(), ChatActivity.class); // 다음 넘어갈 클래스 지정
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+
     }
 }

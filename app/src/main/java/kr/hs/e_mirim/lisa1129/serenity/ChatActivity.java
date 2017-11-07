@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -29,6 +30,10 @@ public class ChatActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         ActionBar actionBar = getSupportActionBar();
 
+        getMenuInflater().inflate(R.menu.menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+
         // Custom Actionbar를 사용하기 위해 CustomEnabled을 true 시키고 필요 없는 것은 false 시킨다
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);            //액션바 아이콘을 업 네비게이션 형태로 표시합니다.
@@ -48,26 +53,7 @@ public class ChatActivity extends AppCompatActivity {
 
         return true;
     }
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-//        super.onActivityResult(requestCode,resultCode,data);
-//
-//        if(resultCode != RESULT_OK)
-//            return;
-//
-//        switch (requestCode){
-//            case PICK_FROM_GALLERY:{
-//                mImageCaptureUri = data.getData();
-//                Log.i("NR",mImageCaptureUri.getPath().toString()); break;
-//            }
-//        }
-//    }
 
-//    private void getPhotoFromGallery(){
-//        Intent intent = new Intent(Intent.ACTION_PICK);
-//        intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
-//        startActivityForResult(intent,PICK_FROM_GARLLERY);
-//    }
 
     public void airplaneonClicked(View v) {
         Toast.makeText(this, "이미 글귀 화면 입니다.", Toast.LENGTH_SHORT).show();
@@ -76,6 +62,7 @@ public class ChatActivity extends AppCompatActivity {
     }
     public void corssbuttononClicked(View v) {
         finish();
+
     }
 
     private void changeImage(){

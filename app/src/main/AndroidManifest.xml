@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".MypageActivity" />
         <activity android:name=".ChatActivity" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".DiaryWriteActivity"></activity>
     </application>
 
 </manifest>
