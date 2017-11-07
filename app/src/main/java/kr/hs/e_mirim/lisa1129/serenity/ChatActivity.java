@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class ChatActivity extends AppCompatActivity {
     BitmapDrawable bitmap;
     ImageView imageView;
-    int imagepoint=0;
+    static int imagepoint=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +68,7 @@ public class ChatActivity extends AppCompatActivity {
     private void changeImage(){
         Resources res = getResources();
 
-        /*if (imagepoint>365) {imagepoint=1;}
+        if (imagepoint>365) {imagepoint=1;}
 
         if (imagepoint==1) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam1);}
         if (imagepoint==2) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam2);}
@@ -116,7 +116,7 @@ public class ChatActivity extends AppCompatActivity {
         if (imagepoint==44) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam44);}
         if (imagepoint==45) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam45);}
         if (imagepoint==46) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam46);}
-        if (imagepoint==47) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam47);}
+/*        if (imagepoint==47) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam47);}
         if (imagepoint==48) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam48);}
         if (imagepoint==49) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam49);}
         if (imagepoint==50) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam50);}
@@ -438,7 +438,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-        bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam1);
+
         int bitmapWidth = bitmap.getIntrinsicWidth();
         int bitmapHeight = bitmap.getIntrinsicHeight();
 
