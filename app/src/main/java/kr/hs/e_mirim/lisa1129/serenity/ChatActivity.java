@@ -16,13 +16,15 @@ import android.widget.Toast;
 public class ChatActivity extends AppCompatActivity {
     BitmapDrawable bitmap;
     ImageView imageView;
-    static int imagepoint=0;
+    int imagepoint=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         imageView = (ImageView)findViewById(R.id.imageView);
-        imagepoint=imagepoint+1;
+        imagepoint=((int)(Math.random() * 46));
+        imagepoint++;
+
         changeImage();
 
     }
