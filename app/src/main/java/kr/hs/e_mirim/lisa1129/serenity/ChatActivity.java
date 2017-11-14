@@ -70,8 +70,6 @@ public class ChatActivity extends AppCompatActivity {
     private void changeImage(){
         Resources res = getResources();
 
-        if (imagepoint>365) {imagepoint=1;}
-
         if (imagepoint==1) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam1);}
         if (imagepoint==2) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam2);}
         if (imagepoint==3) {bitmap = (BitmapDrawable) res.getDrawable(R.drawable.gam3);}
